@@ -1,0 +1,56 @@
+Issue id,Issue Type,Summary,Description,Parent id,Story point estimate,Sprint,Priority
+1,Epic,Basic Bus Info,Students can see routes and timings through a simple interface.,,,,Medium
+2,Epic,Live Tracking,Students can see live bus location and ETA on a map.,,,,Medium
+3,Epic,Admin & Improvements,"Admin manages routes/timings; testing, feedback and bug fixing.",,,,Medium
+4,Story,US1 - View bus routes,"As a student, I want to view all bus routes, so that I can choose the right bus for my destination.
+
+Acceptance Criteria:
+- System displays the list of routes
+- Selecting a route shows its stops on the map",1,3,Sprint 1,Highest
+5,Story,US2 - View bus timings,"As a student, I want to check bus timings, so that I can plan when to leave for the bus stop.
+
+Acceptance Criteria:
+- Daily departure times shown per route
+- Next upcoming bus is highlighted",1,3,Sprint 1,High
+6,Story,Basic student interface (login + navigation),"As a student, I want a simple login and navigation, so that I can reach features easily.
+
+Acceptance Criteria:
+- Login works for student/driver/admin roles
+- Wrong password shows an error",1,2,Sprint 1,High
+7,Story,US3 - Track current bus location,"As a student, I want to see the current bus location, so that I know exactly where my bus is.
+
+Acceptance Criteria:
+- Bus marker moves on the map in real time
+- 'Last updated' time is shown
+- Outdated location (>30 s) is clearly marked",2,5,Sprint 2,High
+8,Story,US4 - Show estimated arrival time,"As a student, I want to see the estimated arrival time, so that I don't have to wait unnecessarily.
+
+Acceptance Criteria:
+- ETA (minutes) shown for every upcoming stop
+- Passed stops are marked 'Passed'",2,5,Sprint 2,High
+9,Story,US5 - Admin modifies routes and timings,"As a transport admin, I want to modify routes and timings, so that I can respond to schedule changes.
+
+Acceptance Criteria:
+- Only admin can add/edit/delete routes and stops
+- Changes appear to students immediately
+- Student change requests can be approved/rejected",3,8,Sprint 3,Medium
+10,Sub-task,Design route UI,,4,,,Medium
+11,Sub-task,Fetch route data,,4,,,Medium
+12,Sub-task,Test route display,,4,,,Medium
+13,Sub-task,Design timing UI,,5,,,Medium
+14,Sub-task,Connect timetable data,,5,,,Medium
+15,Sub-task,Test timings,,5,,,Medium
+16,Sub-task,Build login screen,,6,,,Medium
+17,Sub-task,Build navigation menu,,6,,,Medium
+18,Sub-task,Build driver GPS/simulate page,,7,,,Medium
+19,Sub-task,Store location in database,,7,,,Medium
+20,Sub-task,Show live marker on map,,7,,,Medium
+21,Sub-task,Handle stale / no-network location,,7,,,Medium
+22,Sub-task,Test GPS,,7,,,Medium
+23,Sub-task,Implement ETA calculation,,8,,,Medium
+24,Sub-task,Show ETA per stop,,8,,,Medium
+25,Sub-task,Test ETA accuracy,,8,,,Medium
+26,Sub-task,Build admin route editor,,9,,,Medium
+27,Sub-task,Add change-request approval flow,,9,,,Medium
+28,Sub-task,Role-based access check,,9,,,Medium
+29,Sub-task,Regression testing and bug fixing,,9,,,Medium

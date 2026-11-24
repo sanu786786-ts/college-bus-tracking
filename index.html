@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusBus — Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <div class="logo">🚌</div>
+    <h1>CampusBus</h1>
+    <p class="muted" style="margin:0 0 20px">College Bus Tracking System — sign in to continue</p>
+    <form id="f" autocomplete="off">
+      <div class="field"><label for="u">Username</label><input id="u" required autofocus></div>
+      <div class="field"><label for="p">Password</label><input id="p" type="password" required></div>
+      <div class="err" id="err"></div>
+      <button class="btn" style="width:100%">Sign in</button>
+    </form>
+    <div class="demo">Demo accounts (click to fill):<br>
+      <span id="demo"></span>
+    </div>
+  </main>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  const ex = Auth.user();
+  if (ex) location.href = Auth.home(ex.role);
+  document.getElementById("demo").innerHTML = APP_CONFIG.users.map(u =>
+    `<button type="button" data-u="${u.username}" data-p="${u.password}">${u.role}: ${u.username} / ${u.password}</button>`).join("");
+  document.getElementById("demo").onclick = e => {
+    const b = e.target.closest("button"); if (!b) return;
+    u.value = b.dataset.u; p.value = b.dataset.p;
+  };
+  f.onsubmit = e => {
+    e.preventDefault();
+    const user = Auth.login(u.value, p.value);
+    if (!user) { err.textContent = "Wrong username or password"; return; }
+    location.href = Auth.home(user.role);
+  };
+</script>
+</body></html>

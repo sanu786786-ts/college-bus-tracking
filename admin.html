@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusBus — Admin</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+<div class="page">
+  <div class="tabs">
+    <button class="tab on" data-t="routes">Routes & timings</button>
+    <button class="tab" data-t="requests">Change requests <span id="pc"></span></button>
+    <button class="tab" data-t="buses">Live buses</button>
+  </div>
+
+  <section id="t-routes">
+    <div class="grid2">
+      <div class="card">
+        <div class="row" style="margin-bottom:12px"><h2 class="grow">Routes</h2><button class="btn sm" id="newRoute">+ New</button></div>
+        <div id="rlist"></div>
+      </div>
+      <div class="card" id="editor"><p class="muted">Select a route to edit, or create a new one.</p></div>
+    </div>
+  </section>
+
+  <section id="t-requests" class="hidden"><div class="card"><h2 style="margin-bottom:12px">Change requests</h2><div id="reqs"></div></div></section>
+  <section id="t-buses" class="hidden"><div class="card"><h2 style="margin-bottom:12px">Live buses</h2><div id="live"></div></div></section>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/config.js"></script><script src="js/seed.js"></script><script src="js/util.js"></script>
+<script src="js/db.js"></script><script src="js/auth.js"></script><script src="js/admin.js"></script>
+</body></html>

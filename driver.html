@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusBus — Driver</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar" id="topbar"></header>
+<div class="page">
+  <div class="grid2">
+    <div class="card">
+      <h2>Driver console</h2>
+      <p class="muted" style="margin:4px 0 16px">Share your bus location with students.</p>
+      <div class="field"><label>Select your route</label><select id="route"></select></div>
+
+      <div class="row" style="margin-bottom:10px">
+        <button class="btn grow" id="gps">📍 Share real GPS</button>
+        <button class="btn sec grow" id="sim">▶ Simulate trip</button>
+      </div>
+      <div class="field"><label>Demo speed: <b id="spdv">50</b> km/h</label>
+        <input type="range" id="spd" min="10" max="120" value="50"></div>
+      <button class="btn danger" id="stop" style="width:100%" disabled>■ Stop sharing</button>
+
+      <div class="stat">
+        <div><span>Status</span><b id="st">Idle</b></div>
+        <div><span>Last sent</span><b id="last">—</b></div>
+      </div>
+      <div class="muted" id="pos" style="font-size:13px"></div>
+      <p class="muted" style="font-size:12.5px;margin-top:14px">💡 <b>Share real GPS</b> uses this device's location sensor (needs HTTPS or localhost and location permission). <b>Simulate trip</b> is a <b>SIMULATED</b> GPS feed for demo — it moves a virtual bus along the route and is not a live GPS integration.</p>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;min-height:420px"><div id="map" style="height:100%;min-height:420px"></div></div>
+  </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/config.js"></script><script src="js/seed.js"></script><script src="js/util.js"></script>
+<script src="js/db.js"></script><script src="js/auth.js"></script><script src="js/driver.js"></script>
+</body></html>
